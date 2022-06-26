@@ -1,0 +1,21 @@
+<div>
+    <h2>Enter your login and password</h2>
+    <input 
+        type="text" 
+        class="form-control" 
+        placeholder="Title..."
+        [(ngModel)]="title"
+        #titleInput
+    >
+
+    <textarea 
+        placeholder="Text..." 
+        class="form-control"
+        cols="40" rows="3" 
+        [(ngModel)]="text"
+    ></textarea>
+
+
+    <button class="btn" (click)="makeArticle()">Post article</button>
+    <button class="btn" (click)="clearArticle()">Clear article</button>
+</div>

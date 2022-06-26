@@ -1,0 +1,21 @@
+<div>
+    <h2>Enter your login and password</h2>
+    <h2>Unix Time is {{unixTime}}</h2>
+    <input 
+        type="text" 
+        class="form-control" 
+        placeholder="Login..."
+        [(ngModel)]="login"
+        #titleInput
+    >
+    
+    <input 
+        type="text" 
+        class="form-control" 
+        placeholder="Password..."
+        [(ngModel)]="password"
+    >
+
+    <button class="btn" (click)="authorization()">Authorization</button>
+    <button class="btn" (click)="clear()">Clear fields</button>
+</div>

@@ -1,0 +1,27 @@
+<div>
+    <h2>Enter your login, email and password</h2>
+    <input 
+        type="text" 
+        class="form-control" 
+        placeholder="Login..."
+        [(ngModel)]="login"
+        #titleInput
+    >
+    <input 
+        type="text" 
+        class="form-control" 
+        placeholder="Email..."
+        [(ngModel)]="email"
+    >
+    <input 
+        type="text" 
+        class="form-control" 
+        placeholder="Password..."
+        [(ngModel)]="password"
+    >
+
+    <small *ngIf="registrResp.error">Error name alredy use!</small>
+    <small *ngIf="registrResp.hello">Registration completed!</small>
+
+    <button class="btn" (click)="addUser()">Registration</button>
+</div>
