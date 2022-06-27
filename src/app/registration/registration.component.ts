@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http"
 import { Component, EventEmitter, Output, OnInit } from '@angular/core'
+import { RequestService } from "../request.service";
 
 export interface User {
   login: string,
@@ -20,11 +21,12 @@ export interface RegistrResp {
 
 @Component({
     selector: 'app-registration',
-    templateUrl: './registration.component.html'
+    templateUrl: './registration.component.html',
+    styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(private http: HttpClient){
+  constructor( private myRequest: RequestService ){
 
   }
 
@@ -56,12 +58,7 @@ export class RegistrationComponent implements OnInit {
         role: this.role
         
       }
-
-      this.users.unshift(user)
-      this.http.post<RegistrResp>('http://127.0.0.1:8000/api/user/registration', user)
-      .subscribe( response => {
-        if(response) this.registrResp = response;
-      } );
+      this.registrResp = this.myRequest.registrReq(user);
     }
     this.login = this.email = this.password = '';
   }

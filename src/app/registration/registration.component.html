@@ -14,14 +14,14 @@
         [(ngModel)]="email"
     >
     <input 
-        type="text" 
+        type="password" 
         class="form-control" 
         placeholder="Password..."
         [(ngModel)]="password"
     >
 
-    <small *ngIf="registrResp.error">Error name alredy use!</small>
-    <small *ngIf="registrResp.hello">Registration completed!</small>
-
     <button class="btn" (click)="addUser()">Registration</button>
+
+    <br><p *ngIf="registrResp.error" class="error">{{registrResp.error}}</p>
+    <br><p *ngIf="registrResp.hello" class="sucsess">Registration completed!</p>
 </div>

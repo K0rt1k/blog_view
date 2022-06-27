@@ -1,0 +1,13 @@
+p {
+    font-size: 1.5 rem;
+
+    &.error {
+        font-size: 3 rem;
+        color: red;
+    }
+
+    &.sucsess {
+        font-size: 3 rem;
+        color: green;
+    }
+}
